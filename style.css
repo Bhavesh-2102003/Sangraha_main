@@ -26,16 +26,20 @@
     background-color: black;
   }
 
-  nav{
+  nav {
     position: fixed;
-    backdrop-filter: blur(10px);
+    background-color: #000000; /* Solid black background */
     width: 100%;
-    z-index: 1;
+    z-index: 5;
     display: flex;
-    padding: 0 20px;
+    padding: 15px 20px;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(255, 215, 0, 0.8), 
+            0 4px 20px rgba(255, 215, 0, 0.6), 
+            0 4px 40px rgba(255, 215, 0, 0.4);
   }
+  
   .btn{
     border: none;
     outline: none;
@@ -135,9 +139,9 @@
   }
   .sym h4{
     font-family:myfont;
-    color:#ff00ff;
-    font-size: 40px;
-    text-shadow: 0 0 20px blue;
+    color:gold;
+    font-size: 60px;
+    text-shadow: 0 0 20px rgb(214, 96, 50);
     margin-top: 40px;
 
   }
@@ -181,6 +185,11 @@
   padding: 20px;
   text-align: justify;
   border-radius: 10px;
+  cursor: pointer;
+  }
+  .dept:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+
   }
  
   .btn{
@@ -234,7 +243,8 @@
   .ename{
     font-family: fonts;
     margin: 100px auto 30px;
-    color: #00ffff;
+    color:gold;
+    text-shadow: 0 0 20px rgb(214, 96, 50);
   }
 
 .dlogo{
@@ -386,6 +396,11 @@ footer{
     .logo{
       width: 150px;
     }
+    .sym h4
+    {
+      font-size: 45px;
+      font-weight:lighter;
+    }
   }
   @media (min-width: 390px){
     .sym h5,.sym h6{
@@ -402,6 +417,10 @@ footer{
     .btn
     {
       font-size: 15px;
+    }
+    .nav
+    {
+      margin-bottom: 800px;
     }
   }
  
