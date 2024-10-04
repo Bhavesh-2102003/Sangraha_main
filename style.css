@@ -56,6 +56,7 @@
     backdrop-filter: blur(20px);
     padding: 30px;
     margin: 10px;
+    margin-top: 80px;
     border-radius: 20px;
     font-family:font;
     font-weight: bolder;
@@ -137,17 +138,17 @@
     color:#ff00ff;
     font-size: 40px;
     text-shadow: 0 0 20px blue;
-    margin-top: 20px;
+    margin-top: 40px;
 
   }
   .sym h1, .sym h3 {
     font-family: 'Samarkan', sans-serif;
-    color: rgb(231, 226, 213); /* Text color */
+    color: rgb(255, 255, 255); 
     text-shadow: 
-        0 0 5px rgb(210, 181, 14),    
-        0 0 8px rgb(225, 207, 100),     
-        0 0 10px rgb(149, 133, 45),    
-        0 0 12px rgb(88, 79, 26);       
+        0 0 20px rgb(64, 36, 0),    
+        0 0 18px rgb(255, 255, 255),     
+        0 0 20px rgb(149, 133, 45),    
+        0 0 20px rgb(88, 79, 26);       
 }
 
 
@@ -403,3 +404,4 @@ footer{
       font-size: 15px;
     }
   }
+ 
