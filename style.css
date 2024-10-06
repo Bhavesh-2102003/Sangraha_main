@@ -351,10 +351,10 @@ footer{
 .staff{
   display: flex;
   flex-wrap: wrap;
-  height: 50vh;
+  height: 10px;
   align-items: center;
   font-size: 16px;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 .staff h1{
   font-size: 20px;
@@ -373,7 +373,7 @@ footer{
   bottom: 0;
   position: fixed;
   width:100vw;
-  margin-top: 200px;
+  margin-top: 20px;
   padding: 30px;
   text-align: center;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -585,7 +585,7 @@ footer{
   display: flex;
   justify-content: space-evenly; /* Center align the videos */
   gap: 0px; /* Space between the videos */
-  margin: 20px 0; /* Corrected margin (no "opx") */
+  margin: 70px 0; /* Corrected margin (no "opx") */
   padding: 0px 0px; /* Padding on the left and right */
   flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
@@ -747,4 +747,41 @@ video {
   height: auto; /* Maintains aspect ratio */
   border-radius: 8px; /* Optional: adds rounded corners */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+}
+.wildlife-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.wildlife-gallery img {
+  width: calc(30% - 20px); /* Three images per row */
+  margin: 20px;
+  height: 250px; /* Set fixed height for consistency */
+  object-fit: cover; /* Ensures the image covers the area, preserving aspect ratio */
+  border: 2px solid #fefae0;
+  filter: grayscale(100%);
+  transition-duration: 1s;
+}
+
+.wildlife-gallery img:hover {
+  border: 5px solid #fff;
+  transform: scale(1.1);
+  filter: none;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .wildlife-gallery img {
+    width: calc(45% - 20px); /* Two images per row on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .wildlife-gallery img {
+    width: calc(90% - 20px); /* Single image per row on small devices */
+  }
 }
