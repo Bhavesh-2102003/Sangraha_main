@@ -105,29 +105,11 @@ nav a {
     position: relative;
     padding: 15px 25px;
     overflow: hidden;
+    transition: color 0.8s;
 }
-
-nav ul li::after {
-    content: ''; 
-    position: absolute; 
-    left: 50%; 
-    bottom: 0; 
-    width: 0; 
-    height: 3px; 
-    background-color: gold; 
-    transition: width 0.8s ease, transform 0.4s ease; 
-    transform: translateX(-50%); 
-}
-
 nav a:hover {
     color: gold; 
 }
-
-nav ul li:hover::after {
-    width: 100%; 
-}
-
-
   .checkbtn{
     font-size: 30px;
     float: right;
@@ -139,6 +121,16 @@ nav ul li:hover::after {
   #check{
     display: none;
   }
+  .checkbtn .fa-times {
+    display: none;
+  }
+  #check:checked ~ .checkbtn .fa-times {
+    display: block;
+}
+
+#check:checked ~ .checkbtn .fa-bars {
+    display: none;
+}
   #video {
     position: fixed;
   right: 0;
@@ -189,6 +181,9 @@ nav ul li:hover::after {
         0 0 18px rgb(255, 255, 255),     
         0 0 20px rgb(149, 133, 45),    
         0 0 20px rgb(88, 79, 26);       
+}
+html {
+  scroll-behavior:smooth;
 }
 
 
@@ -372,7 +367,7 @@ footer{
  @media (max-width: 1000px){
     .checkbtn{
       display: block;
-      font-size: 20px;
+      font-size: 25px;
     }
     label.logo{
       font-size: 10px;
@@ -383,7 +378,7 @@ footer{
     }
     ul{
       position: fixed;
-      /* display: flex; */
+      display: flex;
       flex-direction: column;
       justify-content: space-evenly;
       width: 100%;
@@ -429,6 +424,10 @@ footer{
       text-align: center;
       transition: all .5s;
   }
+  html {
+    scroll-behavior:smooth;
+}
+
   li {
     margin: 0; 
    }
@@ -450,14 +449,16 @@ footer{
       font-size: 20px;
     }
   }
-  @media (max-width: 400px){
+  @media (max-width: 450px){
     .logo{
       width: 150px;
     }
     .sym h4
     {
-      font-size: 45px;
+      font-size: 40px;
       font-weight:lighter;
+      padding-left: 10px;
+      padding-right: 10px;
     }
   }
   @media (min-width: 390px){
@@ -474,12 +475,41 @@ footer{
     }
     .btn
     {
-      font-size: 15px;
+      font-size: 17px;
     }
-    .nav
+  }
+  @media (max-width:480px)
+  {
+    #timer 
     {
-      margin-bottom: 800px;
+      font-size: 25px;
+      width: 300px;
+      height:70px
     }
+    .btn
+    {
+      font-size: 16px;
+    }
+    .sym h4
+    {
+      padding-bottom: 50px;
+    }
+    ul {
+      position: fixed;
+      display: flex; 
+      padding-top: 50px;
+      justify-content: flex-start; 
+      gap:80px;
+      width: 65%;
+      height: 80vh;
+      color: white;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+      box-shadow: 0 4px 10px -2px rgba(230, 206, 70, 0.5);
+  }
+  
   }
 
   .gallery-div {

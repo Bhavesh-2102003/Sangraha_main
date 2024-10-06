@@ -21,10 +21,11 @@
       <input type="checkbox" id="check" onchange="playMusic()">
       <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
+        <i class="fas fa-times"></i>
       </label>
       <div class="title">
       </div>
-      <ul>
+      <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#Event">Events</a></li>
         <li><a href="#about">About</a></li>
@@ -306,7 +307,24 @@
     // --------------------video------------------------
     const vid = document.getElementById('video');
     video.playbackRate=0.9;
-    
+    const checkBox = document.getElementById('check');
+    const navLinks = document.querySelector('.nav-links');
+    const hideNavLinks = () => {
+        navLinks.style.left = '-100%'; 
+        checkBox.checked = false; 
+    };
+    const toggleNavLinks = () => {
+        if (navLinks.style.left === '0px') {
+            hideNavLinks(); 
+        } else {
+            navLinks.style.left = '0'; 
+        }
+    };
+    checkBox.addEventListener('change', toggleNavLinks);
+    const liElements = document.querySelectorAll('.nav-links li');
+    liElements.forEach(li => {
+        li.addEventListener('click', hideNavLinks);
+});
 </script>
   </body>
 </html>
