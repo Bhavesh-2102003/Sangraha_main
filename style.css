@@ -176,7 +176,7 @@ nav ul li:hover::after {
   .sym h4{
     font-family:myfont;
     color:gold;
-    font-size: 60px;
+    font-size: 40px;
     text-shadow: 0 0 20px rgb(214, 96, 50);
     margin-top: 40px;
 
@@ -297,7 +297,7 @@ nav ul li:hover::after {
     
   }
   .ename{
-    font-family: fonts;
+    font-family: myfont;
     margin: 100px auto 30px;
     color:gold;
     text-shadow: 0 0 20px rgb(214, 96, 50);
@@ -470,7 +470,7 @@ footer{
     }
     .ename
     {
-      font-size: 45px;
+      font-size: 40px;
     }
     .btn
     {
@@ -481,5 +481,130 @@ footer{
       margin-bottom: 800px;
     }
   }
+
+  .gallery-div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    background: transparent; /* Transparent background */
+    overflow: hidden;
+  }
+  
+    
+  .scope {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style:preserve-3d;
+    animation: slid 45s linear infinite;
+  }
+
+  @media (max-width: 768px) {
+    .scope {
+      width: 150px;  /* Reduce the width for smaller screens */
+      height: 150px; /* Reduce the height for smaller screens */
+    }
+    .scope span {
+      transform: rotateY(calc(var(--i) * 45deg)) translateZ(200px); /* Decrease translateZ */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .scope {
+      width: 150px;  /* Further reduce the width for very small screens */
+      height: 150px; /* Further reduce the height for very small screens */
+    }
+    .scope span {
+      transform: rotateY(calc(var(--i) * 45deg)) translateZ(150px);
+    }
+  }
+.scope span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(350px);
+}
+.scope span img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: 2s;
+}
+.scope span:hover img {
+  transform: translateY(-50px) scale(1.7);
+}
+@keyframes slid {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100% {  
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+.gallery-div .ename{
+  font-family: myfont;
+  margin: 0px;
+  font-size: 15px;
+  color:gold;
+  text-shadow: 0 0 20px rgb(214, 96, 50);
+}
+
+
+/* Style for the video gallery container */
+.video-gallery {
+  display: flex;
+  justify-content: space-evenly; /* Center align the videos */
+  gap: 0px; /* Space between the videos */
+  margin: 20px 0; /* Corrected margin (no "opx") */
+  padding: 0px 0px; /* Padding on the left and right */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Style for each video container */
+.video-container {
+  flex: 1 1 48%; /* Increase width to 48% for slightly larger videos */
+  position: relative;
+  border-radius: 10px; /* Rounded corners */
+  padding: 0px; /* Space inside the container */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+  display: flex;
+  justify-content: center; /* Center video within the container */
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+
+}
+
+
+/* Style for the video element */
+video {
+  width: 100%;
+  max-width: 500px; /* Increase max width to make the video larger */
+  height: auto;
+  border-radius: 5px; /* Rounded edges for the video */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .video-gallery {
+    padding: 0 5px; /* Add padding to create space around the gallery */
+  }
+  
+  .video-container {
+    flex: 1 1 100%; /* Each video takes full width on smaller screens */
+    margin-bottom: 20px; /* Add space below the video */
+  }
+}
 
  
