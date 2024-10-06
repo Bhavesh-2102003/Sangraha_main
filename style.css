@@ -316,10 +316,6 @@ nav ul li:hover::after {
 
 .dlogo{
   width:50px;
-  height: 50px;
-  object-fit: cover;
-  margin: -60px 70px 0 110px  ;
-  
   border-radius: 50%;
 }
 .learn
@@ -338,7 +334,12 @@ footer{
 #contact{
   backdrop-filter: blur(40px);
   height: 250vh;
-  margin-top: 100vh;
+  margin-top: 0px;
+}
+#contact-map{
+  backdrop-filter: blur(40px);
+  height: 250vh;
+  margin-top: 0px;
 }
 .map
 {
@@ -728,4 +729,19 @@ video {
   .dignitary {
     width: 80%; /* Adjust the width for smaller screens */
   }
+}
+.about-image-container {
+  display: flex;
+  justify-content: space-between; /* Adjusts space between images */
+  align-items: center; /* Centers images vertically */
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  max-width: 100%; /* Ensures container doesn't exceed width */
+  margin: 0 auto; /* Centers the container */
+}
+
+.about-image {
+  width: 48%; /* Each image takes up 48% of the container's width */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 8px; /* Optional: adds rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
 }
