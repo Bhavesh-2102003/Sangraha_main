@@ -118,11 +118,11 @@
       <img src="./gallery/image2.jpg" alt="Image 2">
       <img src="./gallery/image3.jpg" alt="Image 3">
       <img src="./gallery/image4.jpg" alt="Image 4">
-      <img src="./gallery/image5.jpg" alt="Image 5">
+      <img src="./gallery/image9.jpg" alt="Image 5">
       <img src="./gallery/image6.jpg" alt="Image 6">
       <img src="./gallery/image7.jpg" alt="Image 7">
       <img src="./gallery/image8.jpg" alt="Image 8">
-      <img src="./gallery/image9.jpg" alt="Image 9">
+      <img src="./gallery/image5.jpg" alt="Image 9">
   </div>
   
 
@@ -131,14 +131,14 @@
 
         <div class="video-gallery">
           <div class="video-container">
-              <video id="myVideo" controls>
+              <video id="myVideo1" controls>
                   <source src="./gallery/vid1.mp4" type="video/mp4">
                   Your browser does not support the video tag.
               </video>
           </div>
           <div class="video-container">
-              <video id="myVideo" controls>
-                  <source src="./gallery/vid1.mp4" type="video/mp4">
+              <video id="myVideo2" controls>
+                  <source src="./gallery/vid2.mp4" type="video/mp4">
                   Your browser does not support the video tag.
               </video>
           </div>
@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-  const video = document.getElementById('myVideo');
+  const video = document.getElementById('myVideo1');
   const backgroundMusic = document.getElementById('background-music');
   const muteButton = document.getElementById('mute-button');
 
@@ -352,7 +352,37 @@ muteButton.addEventListener('click', function () {
     isMuted = !isMuted; // Toggle the mute state
 });
 });
+document.addEventListener('DOMContentLoaded', function () {
+  const video = document.getElementById('myVideo2');
+  const backgroundMusic = document.getElementById('background-music');
+  const muteButton = document.getElementById('mute-button');
 
+  video.addEventListener('play', function () {
+      backgroundMusic.pause(); // Stop the background music
+  });
+  
+  video.addEventListener('pause', function () {
+      backgroundMusic.play(); // Resume background music when video is paused
+  });
+
+  video.addEventListener('ended', function () {
+      backgroundMusic.play(); // Resume background music when video ends
+  });
+
+  // Mute button functionality
+  let isMuted = false;
+
+muteButton.addEventListener('click', function () {
+    if (isMuted) {
+        backgroundMusic.play(); // Play the music if it's muted
+        muteButton.innerHTML = '<i class="fas fa-volume-up"></i>'; // Change icon to volume up
+    } else {
+        backgroundMusic.pause(); // Pause the music if it's playing
+        muteButton.innerHTML = '<i class="fas fa-volume-mute"></i>'; // Change icon to volume mute
+    }
+    isMuted = !isMuted; // Toggle the mute state
+});
+});
 
 //---------------------------------------------------------------
 
