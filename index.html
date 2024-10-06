@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link href="https://fonts.cdnfonts.com/css/samarkan" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   </head>
   <body oncontextmenu="return false">
     <div class="main">
-      <audio autoplay loop id="music">
+      <audio autoplay loop id="background-music" >
         <source src="Interstelllar.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
@@ -31,6 +33,8 @@
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <button id="mute-button"><i class="fas fa-volume-up"></i></button> <!-- Mute button with icon -->
+
       <div >
         <a href="#Event" class="btn" onclick="playMusic() " >Register</a>
       </div>
@@ -112,7 +116,7 @@
 <div class="gallery-div">
 
   <div class="scope">
-    <span style="--i:1;"><img src="https://i.postimg.cc/BQcRL38F/pexels-photo-761963.jpg" alt="not found"></span>
+    <span style="--i:1;"><img src="./gallery/image1.jpg" alt="not found"></span>
     <span style="--i:2;"><img src="https://i.postimg.cc/1RWVB11x/pexels-photo-941693.jpg" alt="not found"></span>
     <span style="--i:3;"><img src="https://i.postimg.cc/CMfHRKfP/woman-2003647-960-720.jpg" alt="not found"></span>
     <span style="--i:4;"><img src="https://i.postimg.cc/T1rDCpVT/beautiful-1274056-960-720.jpg" alt="not found"></span>
@@ -128,13 +132,13 @@
 
         <div class="video-gallery">
           <div class="video-container">
-              <video controls>
+              <video id="myVideo" controls>
                   <source src="./gallery/vid1.mp4" type="video/mp4">
                   Your browser does not support the video tag.
               </video>
           </div>
           <div class="video-container">
-              <video controls>
+              <video id="myVideo" controls>
                   <source src="video2.mp4" type="video/mp4">
                   Your browser does not support the video tag.
               </video>
@@ -142,7 +146,35 @@
       </div>
         <!-------------------------------------------------------- end of video gallery --------------------------------------------------------->
 
+        <h3 class="ename">meet our esteemed guests</h3>
+        <div class="dignitaries-section">
+          <div class="dignitary">
+            <img src="./gallery/convener-photo.jpeg" alt="Convener Photo">
+            <h3>Dr. K Srinivasan B.E,M.E,Ph.D</h3>
+            <p>Convener, HOD/EIE</p>
+          </div>
+        
+          <div class="dignitary">
+            <img src="./gallery/chiefguest.jpg" alt="Chief Guest Photo">
+            <h3>Keep Guessing</h3>
+            <p>Chief Guest, Keynote Speaker</p>
+          </div>
+        </div>
+
+
         <!-------------------------------------------------------- end of gallery ----------------------------------------------------------->
+
+
+
+
+
+
+
+
+
+        <!-------------------------------------------------------- start of about ----------------------------------------------------------->
+        
+        <!-------------------------------------------------------- end of about ----------------------------------------------------------->
 
 
 
@@ -325,6 +357,64 @@
     liElements.forEach(li => {
         li.addEventListener('click', hideNavLinks);
 });
+
+
+//------------------------------------------------------------
+
+document.addEventListener('DOMContentLoaded', function () {
+  const video = document.getElementById('myVideo');
+  const backgroundMusic = document.getElementById('background-music');
+
+  video.addEventListener('play', function () {
+      backgroundMusic.pause(); // Stop the background music
+  });
+  
+  video.addEventListener('pause', function () {
+      backgroundMusic.play(); // Resume background music when video is paused
+  });
+
+  video.addEventListener('ended', function () {
+      backgroundMusic.play(); // Resume background music when video ends
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const video = document.getElementById('myVideo');
+  const backgroundMusic = document.getElementById('background-music');
+  const muteButton = document.getElementById('mute-button');
+
+  video.addEventListener('play', function () {
+      backgroundMusic.pause(); // Stop the background music
+  });
+  
+  video.addEventListener('pause', function () {
+      backgroundMusic.play(); // Resume background music when video is paused
+  });
+
+  video.addEventListener('ended', function () {
+      backgroundMusic.play(); // Resume background music when video ends
+  });
+
+  // Mute button functionality
+  let isMuted = false;
+
+muteButton.addEventListener('click', function () {
+    if (isMuted) {
+        backgroundMusic.play(); // Play the music if it's muted
+        muteButton.innerHTML = '<i class="fas fa-volume-up"></i>'; // Change icon to volume up
+    } else {
+        backgroundMusic.pause(); // Pause the music if it's playing
+        muteButton.innerHTML = '<i class="fas fa-volume-mute"></i>'; // Change icon to volume mute
+    }
+    isMuted = !isMuted; // Toggle the mute state
+});
+});
+
+
+//---------------------------------------------------------------
+
+
+
 </script>
   </body>
 </html>
