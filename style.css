@@ -509,7 +509,9 @@ footer{
     overflow: hidden;
   }
   
-    
+    footer h6{
+      font-size: 12px;
+    }
   .scope {
     position: relative;
     width: 200px;
