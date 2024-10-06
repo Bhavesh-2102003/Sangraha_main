@@ -26,16 +26,20 @@
     background-color: black;
   }
 
-  nav{
+  nav {
     position: fixed;
-    backdrop-filter: blur(10px);
+    background-color: #000000; 
     width: 100%;
-    z-index: 1;
+    z-index: 5;
     display: flex;
-    padding: 0 20px;
+    padding: 15px 20px;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(255, 215, 0, 0.8), 
+            0 4px 20px rgba(255, 215, 0, 0.6), 
+            0 4px 40px rgba(255, 215, 0, 0.4);
   }
+  
   .btn{
     border: none;
     outline: none;
@@ -48,32 +52,49 @@
   align-items: center;
 }
 #timer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:3px;
-    font-size: 30px;
-    backdrop-filter: blur(20px);
-    padding: 30px;
-    margin: 10px;
-    margin-top: 80px;
-    border-radius: 20px;
-    font-family:font;
-    font-weight: bolder;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  font-size: 30px;
+  backdrop-filter: blur(20px);
+  padding: 30px;
+  margin: 10px;
+  margin-top: 80px;
+  border-radius: 20px;
+  font-family: font;
+  font-weight: bolder;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent; 
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.5); 
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+      box-shadow: 0 0 15px rgba(245, 211, 21, 0.5);
   }
+  100% {
+      box-shadow: 0 0 25px rgba(255, 215, 0, 1);
+  }
+}
+
   #timer p{
     font-size: 24px;
     
   }
-  nav{
+  nav {
     height: 80px;
-  }
-  nav ul li{
+}
+
+nav ul li {
     display: inline-block;
-    margin: 0 10px;
-  }
-  nav a{
+    margin: 0px 2px;
+}
+
+nav a {
     font-size: 16px;
     padding: 8px 14px;
     color: white;
@@ -81,13 +102,32 @@
     border-radius: 30px;
     cursor: pointer;
     text-transform: uppercase;
-  }
-  nav a.active,
-  nav a:hover,
-  nav a:focus{
-    background:radial-gradient(black 45%,white);
-    transition: .5s;
-  }
+    position: relative;
+    padding: 15px 25px;
+    overflow: hidden;
+}
+
+nav ul li::after {
+    content: ''; 
+    position: absolute; 
+    left: 50%; 
+    bottom: 0; 
+    width: 0; 
+    height: 3px; 
+    background-color: gold; 
+    transition: width 0.8s ease, transform 0.4s ease; 
+    transform: translateX(-50%); 
+}
+
+nav a:hover {
+    color: gold; 
+}
+
+nav ul li:hover::after {
+    width: 100%; 
+}
+
+
   .checkbtn{
     font-size: 30px;
     float: right;
@@ -98,6 +138,17 @@
   }
   #check{
     display: none;
+   
+  }
+  .checkbtn .fa-times {
+    display: none;
+  }
+  #check:checked ~ .checkbtn .fa-times {
+    display: block;
+}
+
+#check:checked ~ .checkbtn .fa-bars {
+  display: none;
   }
   #video {
     position: fixed;
@@ -135,9 +186,9 @@
   }
   .sym h4{
     font-family:myfont;
-    color:#ff00ff;
+    color:gold;
     font-size: 40px;
-    text-shadow: 0 0 20px blue;
+    text-shadow: 0 0 20px rgb(214, 96, 50);
     margin-top: 40px;
 
   }
@@ -175,13 +226,38 @@
   display: flex;
   justify-content: center;
 }
-  .dept{
-  backdrop-filter:blur(20px);
-  margin:30px auto;
+.dept {
+  backdrop-filter: blur(2px);
+  margin: 30px auto;
   padding: 20px;
   text-align: justify;
   border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.dept:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+  background-color: rgba(255, 255, 255, 0.1); 
+}
+.dept:active {
+  animation: pulse 0.5s;
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1.05);
   }
+  50% {
+      transform: scale(1.1); 
+  }
+  100% {
+      transform: scale(1.05);
+  }
+}
+.dept:hover {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 228, 77, 0.5);
+}
  
   .btn{
     border: 1px double white;
@@ -232,16 +308,16 @@
     
   }
   .ename{
-    font-family: fonts;
+    font-family: myfont;
     margin: 100px auto 30px;
-    color: #00ffff;
+    color:gold;
+    text-shadow: 0 0 20px rgb(214, 96, 50);
   }
 
 .dlogo{
-  width:100px;
-  margin: -60px 70px 0 80px  ;
-  
+  width:50px;
   border-radius: 50%;
+  margin:-60px 70px 0 110px
 }
 .learn
 {
@@ -259,7 +335,12 @@ footer{
 #contact{
   backdrop-filter: blur(40px);
   height: 250vh;
-  margin-top: 100vh;
+  margin-top: 0px;
+}
+#contact-map{
+  backdrop-filter: blur(40px);
+  height: 250vh;
+  margin-top: 0px;
 }
 .map
 {
@@ -270,10 +351,10 @@ footer{
 .staff{
   display: flex;
   flex-wrap: wrap;
-  height: 50vh;
+  height: 10px;
   align-items: center;
   font-size: 16px;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 .staff h1{
   font-size: 20px;
@@ -292,7 +373,7 @@ footer{
   bottom: 0;
   position: fixed;
   width:100vw;
-  margin-top: 200px;
+  margin-top: 20px;
   padding: 30px;
   text-align: center;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -317,13 +398,13 @@ footer{
     }
     ul{
       position: fixed;
-      display: flex;
+      /* display: flex; */
       flex-direction: column;
       justify-content: space-evenly;
       width: 100%;
       height: 25vh;
       color: white;
-      background: rgba(0,0,0,0.7);
+      background: black;
       top: 80px;
       left: -100%;
       text-align: center;
@@ -351,19 +432,21 @@ footer{
     .sym h5,.sym h6{
       font-size: 30px;
     }
-    ul{
+    ul {
       position: fixed;
       display: flex;
-      flex-direction: column;
       justify-content: space-evenly;
-      width: 100%;
-      height: 25vh;
+      width: 56%;
+      height: 90vh;
       color: white;
       top: 80px;
       left: -100%;
       text-align: center;
       transition: all .5s;
-    } 
+  }
+  li {
+    margin: 0; 
+   }
     .nontech {
       width: 80vw;
     }
@@ -386,6 +469,11 @@ footer{
     .logo{
       width: 150px;
     }
+    .sym h4
+    {
+      font-size: 45px;
+      font-weight:lighter;
+    }
   }
   @media (min-width: 390px){
     .sym h5,.sym h6{
@@ -397,11 +485,303 @@ footer{
     }
     .ename
     {
-      font-size: 45px;
+      font-size: 40px;
     }
     .btn
     {
       font-size: 15px;
     }
+    .nav
+    {
+      margin-bottom: 800px;
+    }
   }
- 
+
+  .gallery-div {
+    margin:0px;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    background: transparent; /* Transparent background */
+    overflow: hidden;
+  }
+  
+    footer h6{
+      font-size: 12px;
+    }
+  .scope {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style:preserve-3d;
+    animation: slid 45s linear infinite;
+    margin-top: 110px;
+  }
+
+  @media (max-width: 768px) {
+    .scope {
+      width: 150px;  
+      height: 150px; 
+    }
+    .scope span {
+      transform: rotateY(calc(var(--i) * 45deg)) translateZ(200px); /* Decrease translateZ */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .scope {
+      width: 150px;  
+      height: 150px; 
+    }
+    .scope span {
+      transform: rotateY(calc(var(--i) * 45deg)) translateZ(150px);
+    }
+  }
+.scope span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(350px);
+}
+.scope span img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: 2s;
+}
+.scope span:hover img {
+  transform: translateY(-50px) scale(1.7);
+}
+@keyframes slid {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100% {  
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+.gallery-div .ename{
+  font-family: myfont;
+  margin: 0px;  
+  font-size: 15px;
+  color:gold;
+  text-shadow: 0 0 20px rgb(214, 96, 50);
+}
+
+
+/* Style for the video gallery container */
+.video-gallery {
+  display: flex;
+  justify-content: space-evenly; /* Center align the videos */
+  gap: 0px; /* Space between the videos */
+  margin: 70px 0; /* Corrected margin (no "opx") */
+  padding: 0px 0px; /* Padding on the left and right */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Style for each video container */
+.video-container {
+  flex: 1 1 48%; /* Increase width to 48% for slightly larger videos */
+  position: relative;
+  border-radius: 10px; /* Rounded corners */
+  padding: 0px; /* Space inside the container */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+  display: flex;
+  justify-content: center; /* Center video within the container */
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+
+}
+
+
+/* Style for the video element */
+video {
+  width: 100%;
+  max-width: 500px; /* Increase max width to make the video larger */
+  height: auto;
+  border-radius: 5px; /* Rounded edges for the video */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .video-gallery {
+    padding: 0 5px; /* Add padding to create space around the gallery */
+  }
+  
+  .video-container {
+    flex: 1 1 100%; /* Each video takes full width on smaller screens */
+    margin-bottom: 20px; /* Add space below the video */
+  }
+}
+#mute-button {
+  position: fixed; /* Fixed positioning */
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  border-style: none;
+  background: rgba(255, 255, 255, 0); /* Transparent background */
+  border-radius: 50%; /* Circular button */
+  padding: 12px; /* Padding around the icon */
+  cursor: pointer; /* Pointer cursor */
+  font-size: 28px; /* Larger icon size */
+  color: white; /* Icon color */
+  backdrop-filter: blur(10px); /* Apply a slight blur */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Outer shadow */
+  transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+  outline: none; /* Remove outline on focus */
+  z-index: 1000; /* Ensures the button stays on top */
+}
+
+#mute-button:hover {
+  background: rgba(0, 191, 255, 0.4); /* Slightly less transparent on hover */
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3); /* More shadow on hover */
+  transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
+#mute-button:active {
+  transform: scale(0.95); /* Slightly shrink when clicked */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Shrink shadow on click */
+}
+
+/* Mute button styles when music is muted */
+#mute-button.muted {
+  background: rgba(255, 87, 51, 0.3); /* Muted state with a red tint */
+  backdrop-filter: blur(10px); /* Keep the blur effect */
+  color: white; /* Change icon color */
+}
+
+#mute-button.muted:hover {
+  background: rgba(255, 87, 51, 0.4); /* Darker on hover when muted */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  #mute-button {
+      padding: 10px; /* Adjust padding on smaller screens */
+      font-size: 24px; /* Smaller icon size */
+      bottom: 15px; /* Adjust distance from bottom on smaller screens */
+      right: 15px; /* Adjust distance from right on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  #mute-button {
+      padding: 8px; /* Even less padding on very small screens */
+      font-size: 22px; /* Even smaller icon size */
+      bottom: 10px; /* Adjust distance from bottom for mobile devices */
+      right: 10px; /* Adjust distance from right for mobile devices */
+  }
+}
+
+
+.dignitaries-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 100px;
+  padding: 40px;
+  background-color: transparent; /* Optional background color */
+}
+
+.dignitary {
+  text-align: center;
+  width: 250px;
+  margin: 20px;
+}
+
+.dignitary img {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Add some shadow */
+}
+
+.dignitary h3 {
+  margin-top: 10px;
+  font-family: 'Audiowide', sans-serif;
+  color: gold;
+  font-size: 20px;
+  text-shadow: 2px 2px 10px deepskyblue;
+}
+
+.dignitary p {
+  color: white;
+  font-family: 'Audiowide', sans-serif;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .dignitaries-section {
+    flex-direction: column;
+  }
+
+  .dignitary {
+    width: 80%; /* Adjust the width for smaller screens */
+  }
+}
+.about-image-container {
+  display: flex;
+  justify-content: space-between; /* Adjusts space between images */
+  align-items: center; /* Centers images vertically */
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  max-width: 100%; /* Ensures container doesn't exceed width */
+  margin: 0 auto; /* Centers the container */
+}
+
+.about-image {
+  width: 48%; /* Each image takes up 48% of the container's width */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 8px; /* Optional: adds rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+}
+.wildlife-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.wildlife-gallery img {
+  width: calc(30% - 20px); /* Three images per row */
+  margin: 20px;
+  height: 250px; /* Set fixed height for consistency */
+  object-fit: cover; /* Ensures the image covers the area, preserving aspect ratio */
+  border: 2px solid #fefae0;
+  filter: grayscale(100%);
+  transition-duration: 1s;
+}
+
+.wildlife-gallery img:hover {
+  border: 5px solid #fff;
+  transform: scale(1.1);
+  filter: none;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .wildlife-gallery img {
+    width: calc(45% - 20px); /* Two images per row on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .wildlife-gallery img {
+    width: calc(90% - 20px); /* Single image per row on small devices */
+  }
+}

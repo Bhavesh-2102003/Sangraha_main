@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link href="https://fonts.cdnfonts.com/css/samarkan" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="./gallery/favicon.jpg" sizes="32x32">
   </head>
   <body oncontextmenu="return false">
     <div class="main">
-      <audio autoplay loop id="music">
+      <audio autoplay loop id="background-music" >
         <source src="Interstelllar.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
@@ -21,15 +23,18 @@
       <input type="checkbox" id="check" onchange="playMusic()">
       <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
+        <i class="fas fa-times"></i>
       </label>
       <div class="title">
       </div>
-      <ul>
+      <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#Event">Events</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <button id="mute-button"><i class="fas fa-volume-up"></i></button> <!-- Mute button with icon -->
+
       <div >
         <a href="#Event" class="btn" onclick="playMusic() " >Register</a>
       </div>
@@ -48,191 +53,179 @@
             <h2 class="etech">Technical and Non-Technical </h2>
             <div class="tech">
                 <div class="dept">
-                    <img src="cse.png" alt="cse" class="dlogo">
+                    <img src="./cse.png" alt="cse" class="dlogo">
                     <h4>PROJECT PRESENTATION</h4>
                     <h4>Technical</h4>
       
                       <ol>
-                        <li>Cash prize 5000/-</li>
+                        <li>Cash prize 2250/-</li>
                         <li>Upto 4 members per team</li>
                         <li>Open to all domains</li>
                         <li>Prototype is a must</li>
                       </ol>
-                      <a href="PAPER PRESENTATION CSE.pdf" download class="learn">Learn more</a>
-                      <a href="https://forms.gle/ETxNb3Z8vyBQKTxTA" class="learn">RegisterNow</a>
+                      <a href="./gallery/Rulebook.pdf" download class="learn">Learn more</a>
+                      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeR6Noq5E55zuHHM1jMi2IMR5NrlIjPzz9ojyzX2DkQJgoSAQ/viewform?vc=0&c=0&w=1&flr=0&pli=1" class="learn">RegisterNow</a>
                 </div>
                 
                 <div class="dept">
-                    <img src="eee.png" alt="eee" class="dlogo">
+                    <img src="./ece.jpeg" alt="eee" class="dlogo">
                     <h4>PAPER PRESENTATION</h4>
                     <h4>Technical</h4>
        
                     <ol>
-                      <li>Cash prize 5000/-</li>
+                      <li>Cash prize 2250/-</li>
                       <li>Upto 4 members per team</li>
                       <li>Open to all domains</li>
                       <li>Presentation is a must</li>
                     </ol>
-                    <a href="PAPER PRESENTATION EEE.pdf" download class="learn">Learn more</a>
-                    <a href="https://forms.gle/4CP9xwwpxSF2ZUz38" class="learn">RegisterNow</a>
+                    <a href="./gallery/Rulebook.pdf" download class="learn">Learn more</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeR6Noq5E55zuHHM1jMi2IMR5NrlIjPzz9ojyzX2DkQJgoSAQ/viewform?vc=0&c=0&w=1&flr=0&pli=1" class="learn">RegisterNow</a>
                 </div>
                 <div class="dept">
-                    <img src="mech.png" alt="mech" class="dlogo">
+                    <img src="./eee.png" alt="mech" class="dlogo">
                     <h4>TREASURE HUNT</h4>
                   <h4>Non-Technical</h4>
            
                     <ol>
-                        <li>cash prize 3000/-</li>
+                        <li>cash prize 2250/-</li>
                         <li>Upto 4 members per team</li>
                         <li>Find clues around the venue</li>
                         
                     </ol>
-                    <a href="LEE MEXTRON.pdf" download class="learn">Learn more</a>
-                    <a href="https://forms.gle/8G2dujWr51VvyJmf7" class="learn">RegisterNow</a>
+                    <a href="./gallery/Rulebook.pdf" download class="learn">Learn more</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeR6Noq5E55zuHHM1jMi2IMR5NrlIjPzz9ojyzX2DkQJgoSAQ/viewform?vc=0&c=0&w=1&flr=0&pli=1" class="learn">RegisterNow</a>
                 </div>
                 <div class="dept">
-                  <img src="ece.jpeg" alt="ece" class="dlogo">
+                  <img src="./mech.png" alt="ece" class="dlogo">
                   <h4>CRACK THE CASE</h4>
                   <h4>Non-Technical</h4>
                   <ol>
-                    <li>cash prize 3000/-</li>
+                    <li>cash prize 2250/-</li>
                     <li>Upto 4 members per team</li>
-                    <li>Find clues around the venue</li>
+                    <li>Examine clues in crime scene</li>
                   </ol>
-                  <a href="Event Rules.pdf" download class="learn">Learn more</a>
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQdOGNdvsxE-3zyCLTAYq5FEipSCj_xg-soW-i5EOcuTRmkQ/viewform?usp=sf_link" class="learn">RegisterNow</a>
+                  <a href="./gallery/Rulebook.pdf" download class="learn">Learn more</a>
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeR6Noq5E55zuHHM1jMi2IMR5NrlIjPzz9ojyzX2DkQJgoSAQ/viewform?vc=0&c=0&w=1&flr=0&pli=1" class="learn">RegisterNow</a>
               </div>
-            </div>
-          
-            
-           
+            </div> 
     </div>
+
+
+    <!-------------------------------------------------------- start of gallery ----------------------------------------------------------->
+    <h3 class="ename">Recap of sangraha 2k23 </h3>
+    <div class="wildlife-gallery">
+      <img src="./gallery/image1.jpg" alt="Image 1">
+      <img src="./gallery/image2.jpg" alt="Image 2">
+      <img src="./gallery/image3.jpg" alt="Image 3">
+      <img src="./gallery/image4.jpg" alt="Image 4">
+      <img src="./gallery/image9.jpg" alt="Image 5">
+      <img src="./gallery/image6.jpg" alt="Image 6">
+      <img src="./gallery/image7.jpg" alt="Image 7">
+      <img src="./gallery/image8.jpg" alt="Image 8">
+      <img src="./gallery/image5.jpg" alt="Image 9">
+  </div>
+  
+
+
+        <!-------------------------------------------------------- start of video gallery ------------------------------------------------------->
+
+        <div class="video-gallery">
+          <div class="video-container">
+              <video id="myVideo1" controls>
+                  <source src="./gallery/vid1.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+          </div>
+          <div class="video-container">
+              <video id="myVideo2" controls>
+                  <source src="./gallery/vid2.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+          </div>
+      </div>
+        <!-------------------------------------------------------- end of video gallery --------------------------------------------------------->
+
+        <h3 class="ename">meet our esteemed guests</h3>
+        <div class="dignitaries-section">
+          <div class="dignitary">
+            <img src="./gallery/convener-photo.jpeg" alt="Convener Photo">
+            <h3>Dr. K Srinivasan B.E,M.E,Ph.D</h3>
+            <p>Convener, HOD/EIE</p>
+          </div>
+        
+          <div class="dignitary">
+            <img src="./gallery/chiefguest.jpg" alt="Chief Guest Photo">
+            <h3>Keep Guessing</h3>
+            <p>Chief Guest, Keynote Speaker</p>
+          </div>
+        </div>
+
+
+        <!-------------------------------------------------------- end of gallery ----------------------------------------------------------->
+
+
+
+
+
+
+
+
+
+        <!-------------------------------------------------------- start of about ----------------------------------------------------------->
+        
+        <!-------------------------------------------------------- end of about ----------------------------------------------------------->
+
+
+
+
     <div class="contant" id="about">
-      <h3 class="ename">ABOUT</h3>
+      <h3 class="ename">ABOUT THE EVENT</h3>
       <div class="dept">
-        <h6>ABOUT THE TRUST</h6>
-        <p>Vallal P.T.Lee Chengalvaraya Naicker, the illustrious founder of this institution was born on 10th April 1829.
-          The trust was started in the year 1874 in the name of P.T. Lee Chengalvaraya Naicker conceived by benevolent man mainly for the purpose to imparting free education and free medical services for economically weaker and downtrodden society.
-          As per the orders of Hon'ble High Court of Madras, the trust started functioning as a separate entity from the year 1996.
-          Our trust is being administered by a team of nine eminent trustees drawn from different walks of life and who were holding very high positions in the past.
-          Presently the trust board is headed by Hon'ble Justice P.Kalaiyarasan, former Judge, High Court of Madras as Chairman and other trustees duly appointed by Government of Tamil Nadu
+        
+        <p>"Sangraha 2024" is an exciting symposium organized by the Electronics and Instrumentation Engineering (EIE) department at Sri Ramakrishna Engineering College, scheduled for 15th October 2024. Under the leadership of Dr. K. Srinivasan, the convener and HoD, this event will feature a blend of technical and non-technical competitions designed to engage and inspire participants. Attendees can look forward to showcasing their skills in various events, including workshops led by industry professionals. Exciting cash prizes will be awarded to the winners, along with certificates for all participants. Open to engineering students and tech enthusiasts alike, Sangraha promises a day of learning, innovation, and camaraderie.
         </p>
       </div>
+      <h3 class="ename">ABOUT THE DEPARTMENT</h3>
       <div class="dept">
-        <h6>ABOUT THE EVENTS</h6>
-        <p>
-          Welcome to the Symposium on the Lee Techalon, a groundbreaking innovation poised to redefine the landscape of technology as we know it. Today, we gather to delve into the intricacies of this revolutionary advancement, its potential applications, and the profound impact it promises to have on various industries.
-          <h6>Overview of the Lee Techalon:</h6> 
-          </p>  <p>History, Development, and Core Principles.
-          Key Features and Components: Exploring its architecture and functionalities.
-          Technical Specifications: Analyzing its performance metrics and capabilities.
-          Revolutionizing patient care, medical diagnostics, and treatment methodologies.
-          Enhancing safety, efficiency, and sustainability in the automotive and aerospace sectors.
-          Discussing hurdles in development, scalability, and interoperability.
-          <h6>Conclusion:</h6>
-          <p>As we conclude this symposium, it is evident that the Lee Techalon represents a paradigm shift in technological innovation. Its transformative potential across industries and its profound implications for society underscore the importance of continued research, collaboration, and responsible development. Let us embark on this journey with optimism and determination, as we harness the power of the Lee Techalon to shape a brighter future for generations to come. Thank you for your participation.</p>
-    </div>
-      <div class="dept" id="patron">  
-      <h4>CHIEF PATRON</h4>
-      <h5>Thiru Justice P.KALAIYARASAN(Retd)(Chairman)</h5>
-
-      <h4>PATRONS</h4>
-      <h5>V.CHANDRASEKARAN, I.A.S(Retd)</h5>
-      <h5>S.SATHAPILLAI,B.A.,B.L.,</h5>
-      <h5>Dr.R.KANNAIYAN ,M.D.</h5>
-      <h5>Tmt S.RENUKA, M.A.,B.Ed. H.VENKATESH,B.E.,M.E.,</h5>
-      <h5>Dr.B.ARISTATILE,M.Sc.,M.Phil.,Ph.D. M.RAJENDRAN,MCom.,</h5>
-      <h5>M.N.VIJAYASUNDARAM,M.A.,</h5>
-
-      <h4>CO PATRON</h4>
-      <h5>Dr.M.ARULARASU, DIRECTOR</h5>
-      <h5>Dr.P.PALANISAMY PRINCIPAL </h5>
-     </div>  
+        
+        <p>The Department of Electronics and Instrumentation Engineering focuses on nurturing students' professional growth through quality education and a commitment to ethical standards. Our vision is to empower students to build successful careers while addressing societal needs. We emphasize hands-on learning, collaboration, and lifelong learning, preparing graduates to tackle real-world challenges effectively. With a strong foundation in engineering principles, our students are equipped to innovate and lead in their respective fields. The department fosters an environment that inspires research and a passion for continuous improvement.
+        </p>
+      </div>
+      
     </div>
       <br><br>
     <div class="contant" id="contact">
-
+      
       <h3 class="ename">Contact</h3>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d371197.54834712145!2d79.45445308491838!3d12.863405333274809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52c1b523ce2f0d%3A0xcabb5f750b2baf4c!2sP.T.Lee%20Chengalvaraya%20Naicker%20College%20of%20Engineering%20%26%20Technology!5e0!3m2!1sen!2sin!4v1710845088201!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4394.357993204318!2d76.96318201109628!3d11.1015354890221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8f7000afa766b%3A0x2b5757b8d520a3af!2sSri%20Ramakrishna%20Engineering%20College!5e1!3m2!1sen!2sin!4v1728207217695!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <div class="staff">
         <div>
           <h1>STAFF CO-ORDINATORS</h1>
           
-          <h3>CSE/IT </h3>
-          <h4> Mr.M.MURALIKRISHNAN - +91 99525 26182</p>
-          <h3>ECE</h3>
-          <h4>Dr.S.YOGESHWARAN - +91 99946 67553</p>
-          <h3>EEE </h3>
-          <h4>Mr.B.RAJAPAGALAVAN - +91 8870974197</p>
-          <h3>MECH</h3>
-          <h4>Mr.R.RAMESH BABU - +91 90253 53068</p>
-          <h3>CIVIL</h3>
-          <h4>Mr.P.SEKER - +91 99402 43903</p>
+          <h4> Mr.M.Nagarajapandian - +91 95669 34744</p>
+          <h3>Assistant Prof./EIE</h3>
+          <h4>Mr.P.Veeramani - +91 6369 522 068</p>
+          <h3>Assistant Prof./EIE</h3>
+
+          <h1>STUDENT CO-ORDINATORS</h1>
+          <h4>V.JAGANATHAN - +91 96882 62572</h4>
+          <h4>M.THATCHAYENI - +91 94439 66403</h4>
           
-            <h1>Contact us our collage</h2>
-            <h4>Email : ptleecncet1226@gmail.com</h4>
-            <h4>website : www.ptleecncet.com </h4>
+            <h1>Contact  our college</h2>
+            <h4>website : www.srec.ac.in </h4>
+            <h4>Mail:principal@srec.ac.in</h4>
             
-        
-        </div>
-        
-           
-        <div>
-          <h1>
-            OVER ALL CO-ORDINATOR 
-          </h1>
-          <h4>VIGNESHWAR - +91 8682875077</h4>
-          <h4>CSE/III year</h4>
-    
-          <h1>STUIDENT CO-ORDINATORS</h1>
-          <h3>CSE/IT/AI&DS </h3>
-          <h4>R.MOHANPRASATH - +91 9345 757510</h4>
-          <h4>A.JEEVAJYOTHI - +91 91505 85817</h4>
-          <h4>M.RAMPRAKASH- +91 9790477328</h4>
-          <h3>EEE</h3>
-          <h4>EZHILARASAN K - +91 90039 85509</h4>
-          <h4></h4>
-          <h3>MECH/CIVIL</h3>
-          <h4>M.VENKATRAMANAN - +91 87789 90718</h4>
-          <h4>G.NAGARAJ - +91 96296 35482</h4>
-          <h3>ECE</h3>
-          <h4>NAVEENRAJADURAI M - +91 9344398299</h4>
-          <h4>MONISHA N - +91 733880034</h4>
-           <h1>Editing and Designing</h1>
-          <h4>JANARTHANAN - +91 9363676846</h4>
-          
-        </div>
+            </div>
       </div>
       <footer>
-        © 2024 P.T.Lee.CNCET. All rights reserved.
-      </foote>
-      
+        <H6>© 2024 Sangraha. All rights reserved.</H6>
+        <H6>Designed and Devloped at EIE</H6>
+      </footer>
     </div>
-    
-    
     </div>
-
-
-      <script>
-        document.onkeydown = (e) => {
-    if (e.key == 123) {
-        e.preventDefault();
-    }
-    if (e.ctrlKey && e.shiftKey && e.key == 'I') {
-        e.preventDefault();
-    }
-    if (e.ctrlKey && e.shiftKey && e.key == 'C') {
-        e.preventDefault();
-    }
-    if (e.ctrlKey && e.shiftKey && e.key == 'J') {
-        e.preventDefault();
-    }
-    if (e.ctrlKey && e.key == 'U') {
-        e.preventDefault();
-    }
-};
+    <script>
      //----------------------------Timer for The symposium---------------------------------- 
-        const targetDate = new Date('2024-10-16T00:00:00');
+        const targetDate = new Date('2024-10-15T00:00:00');
             // Update the countdown every second
             const timer = setInterval(updateCountdown, 1000);
 
@@ -285,9 +278,116 @@
             console.error("Could not play audio on first click:", e);
         });
     });
+    
     // --------------------video------------------------
     const vid = document.getElementById('video');
     video.playbackRate=0.9;
+    const checkBox = document.getElementById('check');
+    const navLinks = document.querySelector('.nav-links');
+    const hideNavLinks = () => {
+        navLinks.style.left = '-100%'; 
+        checkBox.checked = false; 
+    };
+    const toggleNavLinks = () => {
+        if (navLinks.style.left === '0px') {
+            hideNavLinks(); 
+        } else {
+            navLinks.style.left = '0'; 
+        }
+    };
+    checkBox.addEventListener('change', toggleNavLinks);
+    const liElements = document.querySelectorAll('.nav-links li');
+    liElements.forEach(li => {
+        li.addEventListener('click', hideNavLinks);
+});
+
+
+//------------------------------------------------------------
+
+document.addEventListener('DOMContentLoaded', function () {
+  const video = document.getElementById('myVideo');
+  const backgroundMusic = document.getElementById('background-music');
+
+  video.addEventListener('play', function () {
+      backgroundMusic.pause(); // Stop the background music
+  });
+  
+  video.addEventListener('pause', function () {
+      backgroundMusic.play(); // Resume background music when video is paused
+  });
+
+  video.addEventListener('ended', function () {
+      backgroundMusic.play(); // Resume background music when video ends
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const video = document.getElementById('myVideo1');
+  const backgroundMusic = document.getElementById('background-music');
+  const muteButton = document.getElementById('mute-button');
+
+  video.addEventListener('play', function () {
+      backgroundMusic.pause(); // Stop the background music
+  });
+  
+  video.addEventListener('pause', function () {
+      backgroundMusic.play(); // Resume background music when video is paused
+  });
+
+  video.addEventListener('ended', function () {
+      backgroundMusic.play(); // Resume background music when video ends
+  });
+
+  // Mute button functionality
+  let isMuted = false;
+
+muteButton.addEventListener('click', function () {
+    if (isMuted) {
+        backgroundMusic.play(); // Play the music if it's muted
+        muteButton.innerHTML = '<i class="fas fa-volume-up"></i>'; // Change icon to volume up
+    } else {
+        backgroundMusic.pause(); // Pause the music if it's playing
+        muteButton.innerHTML = '<i class="fas fa-volume-mute"></i>'; // Change icon to volume mute
+    }
+    isMuted = !isMuted; // Toggle the mute state
+});
+});
+document.addEventListener('DOMContentLoaded', function () {
+  const video = document.getElementById('myVideo2');
+  const backgroundMusic = document.getElementById('background-music');
+  const muteButton = document.getElementById('mute-button');
+
+  video.addEventListener('play', function () {
+      backgroundMusic.pause(); // Stop the background music
+  });
+  
+  video.addEventListener('pause', function () {
+      backgroundMusic.play(); // Resume background music when video is paused
+  });
+
+  video.addEventListener('ended', function () {
+      backgroundMusic.play(); // Resume background music when video ends
+  });
+
+  // Mute button functionality
+  let isMuted = false;
+
+muteButton.addEventListener('click', function () {
+    if (isMuted) {
+        backgroundMusic.play(); // Play the music if it's muted
+        muteButton.innerHTML = '<i class="fas fa-volume-up"></i>'; // Change icon to volume up
+    } else {
+        backgroundMusic.pause(); // Pause the music if it's playing
+        muteButton.innerHTML = '<i class="fas fa-volume-mute"></i>'; // Change icon to volume mute
+    }
+    isMuted = !isMuted; // Toggle the mute state
+});
+});
+
+//---------------------------------------------------------------
+
+
+
 </script>
   </body>
 </html>
